@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksei Tkachev - Software Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 2px solid #007AFF;
+            margin-bottom: 40px;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: 1px solid #007AFF;
+            color: #007AFF;
+            padding: 5px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-switch button:hover {
+            background: #007AFF;
+            color: white;
+        }
+
+        .lang-switch button.active {
+            background: #007AFF;
+            color: white;
+        }
+
+        h1 {
+            color: #1d1d1f;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            color: #007AFF;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #1d1d1f;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            color: #1d1d1f;
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: #f5f5f7;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            color: #1d1d1f;
+        }
+
+        .contact-info {
+            background: #f5f5f7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .contact-info strong {
+            color: #007AFF;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        footer {
+            background: #f5f5f7;
+            padding: 30px 20px;
+            text-align: center;
+            color: #666;
+            margin-top: auto;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-info {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .legal-info p {
+            margin: 5px 0;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 15px;
+        }
+
+        [data-lang] {
+            display: none;
+        }
+
+        [data-lang].active {
+            display: block;
+        }
+
+        [data-lang-inline] {
+            display: none;
+        }
+
+        [data-lang-inline].active {
+            display: inline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 30px 0 15px;
+            }
+
+            .contact-info strong {
+                display: block;
+                margin-bottom: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="lang-switch">
+                <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
+                <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
+            </div>
+            <h1>Aleksei Tkachev</h1>
+            <p class="subtitle" data-lang="en" class="active">Software Developer</p>
+            <p class="subtitle" data-lang="sr">Programer</p>
+            <p class="company-name">Aleksei Tkachev pr Beograd</p>
+        </header>
+
+        <section>
+            <h2 data-lang="en" class="active">About</h2>
+            <h2 data-lang="sr">O meni</h2>
+            
+            <div data-lang="en" class="active">
+                <p class="about-text">
+                    Independent software developer based in Belgrade, Serbia, with 12 years of commercial development experience. 
+                    Specializing in full-stack development, mobile applications, and game development.
+                </p>
+                <p class="about-text">
+                    My expertise includes building scalable web applications using .NET and React, developing native mobile 
+                    applications for iOS and Android platforms, and creating engaging gaming experiences. I focus on delivering 
+                    high-quality, maintainable code and user-centric solutions.
+                </p>
+            </div>
+
+            <div data-lang="sr">
+                <p class="about-text">
+                    Nezavisni programer sa sedištem u Beogradu, Srbija, sa 12 godina komercijalnog iskustva u razvoju softvera. 
+                    Specijalizovan za full-stack razvoj, mobilne aplikacije i razvoj igara.
+                </p>
+                <p class="about-text">
+                    Moja ekspertiza uključuje izradu skalabilnih web aplikacija korišćenjem .NET i React tehnologija, razvoj 
+                    nativnih mobilnih aplikacija za iOS i Android platforme, kao i kreiranje zanimljivih gaming iskustava. 
+                    Fokusiram se na isporuku kvalitetnog, održivog koda i rešenja orijentisanih ka korisnicima.
+                </p>
+            </div>
+
+            <div class="skills">
+                <span class="skill-tag">iOS Development</span>
+                <span class="skill-tag">Android Development</span>
+                <span class="skill-tag">.NET</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Full-Stack Development</span>
+                <span class="skill-tag">Game Development</span>
+            </div>
+        </section>
+
+        <section>
+            <h2 data-lang="en" class="active">Contact</h2>
+            <h2 data-lang="sr">Kontakt</h2>
+            
+            <div class="contact-info">
+                <p data-lang="en" class="active"><strong>Email:</strong> contact@alekseitkachev.dev</p>
+                <p data-lang="sr"><strong>Email:</strong> contact@alekseitkachev.dev</p>
+                
+                <p data-lang="en" class="active"><strong>Location:</strong> Belgrade, Serbia</p>
+                <p data-lang="sr"><strong>Lokacija:</strong> Beograd, Srbija</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="legal-info" data-lang="en" class="active">
+                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
+                <p>RESAVSKA 33, apartment 1, BELGRADE, Serbia</p>
+                <p>Post office number and name: 11167 BEOGRAD 113</p>
+                <p>Registration number/Identification number: 68512867</p>
+                <p>Tax identification number (PIB): 115631550</p>
+            </div>
+            
+            <div class="legal-info" data-lang="sr">
+                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
+                <p>RESAVSKA 33, stan 1, BEOGRAD, Srbija</p>
+                <p>Broj i naziv pošte: 11167 BEOGRAD 113</p>
+                <p>Registarski broj/Matični broj: 68512867</p>
+                <p>PIB: 115631550</p>
+            </div>
+            
+            <p class="copyright">© 2026 Aleksei Tkachev pr Beograd. <span data-lang-inline="en" class="active">All rights reserved.</span><span data-lang-inline="sr">Sva prava zadržana.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            // Remove active class from all language elements
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('[data-lang-inline]').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Add active class to selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            document.querySelectorAll(`[data-lang-inline="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Update button states
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-sr').classList.remove('active');
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Load saved language preference on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
