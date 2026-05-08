@@ -65,6 +65,22 @@
             color: white;
         }
 
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
         h1 {
             color: #1d1d1f;
             font-size: 2.5em;
@@ -208,6 +224,17 @@
         }
 
         @media (max-width: 768px) {
+            .header-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .header-logo {
+                width: 60px;
+                height: 60px;
+            }
+
             h1 {
                 font-size: 2em;
             }
@@ -238,11 +265,16 @@
                 <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
                 <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
             </div>
-            <h1>Aleksei Tkachev pr Beograd</h1>
-            <p class="subtitle" data-lang="en" class="active">Software Development Studio</p>
-            <p class="subtitle" data-lang="sr">Razvojna softverska studija</p>
-            <div class="status-badge" data-lang="en">Registered Business Entity in the Republic of Serbia</div>
-            <div class="status-badge" data-lang="sr">Registrovano poslovno lice u Republici Srbiji</div>
+            <div class="header-title">
+                <img src="favicon.svg" alt="Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>Aleksei Tkachev pr Beograd</h1>
+                    <p class="subtitle" data-lang="en" class="active">Software Development Studio</p>
+                    <p class="subtitle" data-lang="sr">Razvojna softverska studija</p>
+                    <div class="status-badge" data-lang="en">Registered Business Entity in the Republic of Serbia</div>
+                    <div class="status-badge" data-lang="sr">Registrovano poslovno lice u Republici Srbiji</div>
+                </div>
+            </div>
         </header>
 
         <section>
@@ -306,7 +338,10 @@
                 <span class="skill-tag">Android Development</span>
                 <span class="skill-tag">.NET</span>
                 <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
                 <span class="skill-tag">C#</span>
+                <span class="skill-tag">PGSQL</span>
+                <span class="skill-tag">T-SQL</span>
                 <span class="skill-tag">Flutter</span>
                 <span class="skill-tag">Dart</span>
                 <span class="skill-tag">Full-Stack Development</span>
