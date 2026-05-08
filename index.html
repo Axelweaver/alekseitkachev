@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksei Tkachev - Software Developer</title>
+    <title>Aleksei Tkachev pr Beograd - Software Development Studio</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         * {
@@ -117,6 +117,17 @@
             margin-bottom: 20px;
         }
 
+        .services-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .services-list li {
+            margin-bottom: 10px;
+            color: #1d1d1f;
+            font-size: 1.05em;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -227,52 +238,77 @@
                 <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
                 <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
             </div>
-            <h1>Aleksei Tkachev</h1>
-            <p class="subtitle" data-lang="en" class="active">Software Developer</p>
-            <p class="subtitle" data-lang="sr">Programer</p>
-            <p class="company-name">Aleksei Tkachev pr Beograd</p>
-            <div class="status-badge" data-lang="en">Registered Sole Proprietor in the Republic of Serbia</div>
-            <div class="status-badge" data-lang="sr">Registrovani preduzetnik u Republici Srbiji</div>
+            <h1>Aleksei Tkachev pr Beograd</h1>
+            <p class="subtitle" data-lang="en" class="active">Software Development Studio</p>
+            <p class="subtitle" data-lang="sr">Razvojna softverska studija</p>
+            <div class="status-badge" data-lang="en">Registered Business Entity in the Republic of Serbia</div>
+            <div class="status-badge" data-lang="sr">Registrovano poslovno lice u Republici Srbiji</div>
         </header>
 
         <section>
-            <h2 data-lang="en" class="active">About</h2>
-            <h2 data-lang="sr">O meni</h2>
+            <h2 data-lang="en" class="active">About Us</h2>
+            <h2 data-lang="sr">O nama</h2>
             
             <div data-lang="en" class="active">
                 <p class="about-text">
-                    Independent software developer based in Belgrade, Serbia, with 12 years of commercial development experience. 
-                    Operating as a registered sole proprietor in the Republic of Serbia, specializing in full-stack development, 
-                    mobile applications, and game development.
+                    We are a software development studio based in Belgrade, Serbia, with over 12 years of experience 
+                    delivering commercial software solutions. Operating as a registered business entity in the Republic 
+                    of Serbia, we specialize in creating high-quality mobile applications, web platforms, and interactive 
+                    digital experiences.
                 </p>
                 <p class="about-text">
-                    My expertise includes building scalable web applications using .NET and React, developing native mobile 
-                    applications for iOS and Android platforms, and creating engaging gaming experiences. I focus on delivering 
-                    high-quality, maintainable code and user-centric solutions.
+                    Our team combines expertise in full-stack development, native mobile applications, and game development 
+                    to deliver comprehensive solutions for clients worldwide. We work with modern technologies including 
+                    .NET, React, iOS, and Android platforms, focusing on scalable architecture and maintainable code.
                 </p>
             </div>
 
             <div data-lang="sr">
                 <p class="about-text">
-                    Nezavisni programer sa sedištem u Beogradu, Srbija, sa 12 godina komercijalnog iskustva u razvoju softvera. 
-                    Poslovanje kao registrovani preduzetnik u Republici Srbiji, specijalizovan za full-stack razvoj, 
-                    mobilne aplikacije i razvoj igara.
+                    Mi smo razvojna softverska studija sa sedištem u Beogradu, Srbija, sa preko 12 godina iskustva u 
+                    isporuci komercijalnih softverskih rešenja. Poslujemo kao registrovano poslovno lice u Republici 
+                    Srbiji i specijalizovani smo za kreiranje kvalitetnih mobilnih aplikacija, web platformi i 
+                    interaktivnih digitalnih iskustava.
                 </p>
                 <p class="about-text">
-                    Moja ekspertiza uključuje izradu skalabilnih web aplikacija korišćenjem .NET i React tehnologija, razvoj 
-                    nativnih mobilnih aplikacija za iOS i Android platforme, kao i kreiranje zanimljivih gaming iskustava. 
-                    Fokusiram se na isporuku kvalitetnog, održivog koda i rešenja orijentisanih ka korisnicima.
+                    Naš tim kombinuje ekspertizu u full-stack razvoju, nativnim mobilnim aplikacijama i razvoju igara 
+                    kako bi isporučio sveobuhvatna rešenja za klijente širom sveta. Radimo sa modernim tehnologijama 
+                    uključujući .NET, React, iOS i Android platforme, fokusirajući se na skalabilnu arhitekturu i 
+                    održiv kod.
                 </p>
             </div>
+        </section>
+
+        <section>
+            <h2 data-lang="en" class="active">Services</h2>
+            <h2 data-lang="sr">Usluge</h2>
+
+            <ul class="services-list" data-lang="en" class="active">
+                <li>Native iOS and Android application development</li>
+                <li>Full-stack web development using .NET and React</li>
+                <li>Game development and interactive experiences</li>
+                <li>Software architecture and technical consulting</li>
+                <li>API design and backend development</li>
+                <li>Code review and quality assurance</li>
+            </ul>
+
+            <ul class="services-list" data-lang="sr">
+                <li>Razvoj nativnih iOS i Android aplikacija</li>
+                <li>Full-stack web razvoj koristeći .NET i React</li>
+                <li>Razvoj igara i interaktivnih iskustava</li>
+                <li>Softverska arhitektura i tehnički konsalting</li>
+                <li>Dizajn API-ja i backend razvoj</li>
+                <li>Pregled koda i obezbeđenje kvaliteta</li>
+            </ul>
 
             <div class="skills">
                 <span class="skill-tag">iOS Development</span>
                 <span class="skill-tag">Android Development</span>
-                <span class="skill-tag">Flutter</span>
                 <span class="skill-tag">.NET</span>
-                <span class="skill-tag">C#</span>
                 <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">Dart</span>
                 <span class="skill-tag">Full-Stack Development</span>
                 <span class="skill-tag">Game Development</span>
                 <span class="skill-tag">Unity 3D</span>
@@ -289,6 +325,9 @@
                 
                 <p data-lang="en" class="active"><strong>Location:</strong> Belgrade, Serbia</p>
                 <p data-lang="sr"><strong>Lokacija:</strong> Beograd, Srbija</p>
+                
+                <p data-lang="en" class="active"><strong>Website:</strong> alekseitkachev.dev</p>
+                <p data-lang="sr"><strong>Website:</strong> alekseitkachev.dev</p>
             </div>
         </section>
     </div>
@@ -298,16 +337,16 @@
             <div class="legal-info" data-lang="en" class="active">
                 <p><strong>Aleksei Tkachev pr Beograd</strong></p>
                 <p>RESAVSKA 33, apartment 1, BELGRADE, Serbia</p>
-                <p>Post office number and name: 11167 BEOGRAD 113</p>
-                <p>Registration number/Identification number: 68512867</p>
+                <p>Post office: 11167 BEOGRAD 113</p>
+                <p>Registration number: 68512867</p>
                 <p>Tax identification number (PIB): 115631550</p>
             </div>
             
             <div class="legal-info" data-lang="sr">
                 <p><strong>Aleksei Tkachev pr Beograd</strong></p>
                 <p>RESAVSKA 33, stan 1, BEOGRAD, Srbija</p>
-                <p>Broj i naziv pošte: 11167 BEOGRAD 113</p>
-                <p>Registarski broj/Matični broj: 68512867</p>
+                <p>Pošta: 11167 BEOGRAD 113</p>
+                <p>Matični broj: 68512867</p>
                 <p>PIB: 115631550</p>
             </div>
             
