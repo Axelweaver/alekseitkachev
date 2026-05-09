@@ -98,6 +98,14 @@
             font-weight: 600;
         }
 
+        h3 {
+            color: #1d1d1f;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
         p {
             margin-bottom: 15px;
             line-height: 1.7;
@@ -114,21 +122,46 @@
 
         footer {
             background: #f5f5f7;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
             color: #666;
             margin-top: auto;
             border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-info {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .legal-info p {
+            margin: 5px 0;
+        }
+
+        .footer-link {
+            margin-top: 15px;
             font-size: 0.9em;
         }
 
-        footer a {
+        .footer-link a {
             color: #007AFF;
             text-decoration: none;
         }
 
-        footer a:hover {
+        .footer-link a:hover {
             text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 15px;
         }
 
         [data-lang] {
@@ -137,6 +170,14 @@
 
         [data-lang].active {
             display: block;
+        }
+
+        [data-lang-inline] {
+            display: none;
+        }
+
+        [data-lang-inline].active {
+            display: inline;
         }
 
         @media (max-width: 768px) {
@@ -161,7 +202,7 @@
                 <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
                 <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
             </div>
-            <a href="index.html" class="back-link">← <span data-lang="en" class="active">Back to Home</span><span data-lang="sr">Nazad na početnu</span></a>
+            <a href="index.html" class="back-link">← <span data-lang-inline="en" class="active">Back to Home</span><span data-lang-inline="sr">Nazad na početnu</span></a>
         </header>
 
         <div data-lang="en" class="active">
@@ -270,7 +311,7 @@
                 <li>Informacije o registraciji naloga (ime, email adresa)</li>
                 <li>Informacije o profilu</li>
                 <li>Komunikacije koje nam šaljete</li>
-                <li>Povratne informacije i odgovore na ankete</li>
+                <li>Povratne informacije i odgovoru na ankete</li>
             </ul>
 
             <h3>1.2 Automatski prikupljene informacije</h3>
@@ -350,7 +391,34 @@
     </div>
 
     <footer>
-        <p>© 2026 Aleksei Tkachev pr Beograd. <a href="index.html"><span data-lang="en" class="active">Back to Home</span><span data-lang="sr">Nazad na početnu</span></a></p>
+        <div class="footer-content">
+            <div class="legal-info" data-lang="en" class="active">
+                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
+                <p>D-U-N-S® number: 369917937</p>
+                <p>RESAVSKA 33, apartment 1, BELGRADE, Serbia</p>
+                <p>Post office: 11167 BEOGRAD 113</p>
+                <p>Registration number: 68512867</p>
+                <p>Tax identification number (PIB): 115631550</p>
+            </div>
+            
+            <div class="legal-info" data-lang="sr">
+                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
+                <p>D-U-N-S® broj: 369917937</p>
+                <p>RESAVSKA 33, stan 1, BEOGRAD, Srbija</p>
+                <p>Pošta: 11167 BEOGRAD 113</p>
+                <p>Matični broj: 68512867</p>
+                <p>PIB: 115631550</p>
+            </div>
+            
+            <p class="footer-link">
+                <a href="index.html">
+                    <span data-lang-inline="en" class="active">Back to Home</span>
+                    <span data-lang-inline="sr">Nazad na početnu</span>
+                </a>
+            </p>
+            
+            <p class="copyright">© 2026 Aleksei Tkachev pr Beograd. <span data-lang-inline="en" class="active">All rights reserved.</span><span data-lang-inline="sr">Sva prava zadržana.</span></p>
+        </div>
     </footer>
 
     <script>
@@ -358,8 +426,14 @@
             document.querySelectorAll('[data-lang]').forEach(el => {
                 el.classList.remove('active');
             });
+            document.querySelectorAll('[data-lang-inline]').forEach(el => {
+                el.classList.remove('active');
+            });
             
             document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            document.querySelectorAll(`[data-lang-inline="${lang}"]`).forEach(el => {
                 el.classList.add('active');
             });
             
