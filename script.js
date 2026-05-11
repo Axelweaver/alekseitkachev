@@ -23,18 +23,29 @@ function setLanguage(lang) {
     document.documentElement.lang = lang;
 }
 
+function getSystemTheme() {
+    // Проверяем системную тему через media query
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+    }
+    return 'light';
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
 function toggleTheme() {
     const html = document.documentElement;
     const currentTheme = html.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
-    html.setAttribute('data-theme', newTheme);
+    applyTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
-    const themeIcon = document.getElementById('theme-icon');
-    if (themeIcon) {
-        themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    }
 }
 
 function downloadPrivacyPDF() {
@@ -51,12 +62,18 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     setLanguage(savedLang);
     
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    // Load theme: saved > system > default (light)
+    const savedTheme = localStorage.getItem('theme');
+    const theme = savedTheme || getSystemTheme();
+    applyTheme(theme);
     
-    const themeIcon = document.getElementById('theme-icon');
-    if (themeIcon) {
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    // Listen for system theme changes (если пользователь меняет тему в системе)
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            // Только если пользователь не выбрал тему вручную
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
     }
 });
