@@ -502,8 +502,8 @@ footer {
 
 @media (max-width: 768px) {
     .developer-badges {
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;  
     }
     
     .dev-badge img {
