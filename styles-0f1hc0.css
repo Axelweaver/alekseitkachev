@@ -412,12 +412,7 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 20px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
     text-decoration: none;
-    color: var(--text-color);
     transition: all 0.3s;
 }
 
@@ -483,7 +478,7 @@ footer {
 }
 
 .dev-badge img {
-    height: 60px;
+    height: 38px;
     width: auto;
     display: block;
 }
@@ -512,6 +507,6 @@ footer {
     }
     
     .dev-badge img {
-        height: 50px;
+        height: 38px;
     }
 }
