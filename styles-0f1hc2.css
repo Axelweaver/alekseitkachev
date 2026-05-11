@@ -474,11 +474,11 @@ footer {
 }
 
 /* Hide badges based on theme */
-.dev-badge-light {
+[data-theme="light"] .dev-badge-light {
     display: block;
 }
 
-.dev-badge-dark {
+[data-theme="light"] .dev-badge-dark {
     display: none;
 }
 
