@@ -447,16 +447,6 @@ footer {
     color: var(--header-text);
 }
 
-@media (max-width: 768px) {
-    .developer-badges {
-        flex-direction: column;
-    }
-    
-    .dev-badge {
-        width: 100%;
-        justify-content: center;
-    }
-}
 /* Developer badges - theme aware */
 .developer-badges {
     display: flex;
