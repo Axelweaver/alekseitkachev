@@ -7,279 +7,275 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-8SFFWRVCMS');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Aleksei Tkachev pr Beograd</title>
+    <title>Privacy Policy — Aleksei Tkachev pr Beograd</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles-0f1hc2.css">
-    <style>
-        @media print {
-            .header-controls,
-            .back-link,
-            .privacy-actions,
-            footer {
-                display: none !important;
-            }
-            
-            body {
-                background: white;
-                color: black;
-            }
-            
-            h1, h2, h3, p, li {
-                color: black;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-9k2m4p.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-controls">
-                <button onclick="toggleTheme()" class="theme-toggle">
-                    <span id="theme-icon">🌙</span>
+    <template id="logo-svg">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM13.4881 6.44591C13.8882 6.55311 14.1256 6.96437 14.0184 7.36447L11.4302 17.0237C11.323 17.4238 10.9117 17.6613 10.5116 17.5541C10.1115 17.4468 9.8741 17.0356 9.98131 16.6355L12.5695 6.97624C12.6767 6.57614 13.088 6.3387 13.4881 6.44591ZM14.9697 8.46967C15.2626 8.17678 15.7374 8.17678 16.0303 8.46967L16.2387 8.67801C16.874 9.3133 17.4038 9.84308 17.7678 10.3202C18.1521 10.8238 18.4216 11.3559 18.4216 12C18.4216 12.6441 18.1521 13.1762 17.7678 13.6798C17.4038 14.1569 16.874 14.6867 16.2387 15.322L16.0303 15.5303C15.7374 15.8232 15.2626 15.8232 14.9697 15.5303C14.6768 15.2374 14.6768 14.7626 14.9697 14.4697L15.1412 14.2981C15.8229 13.6164 16.2797 13.1574 16.5753 12.7699C16.8577 12.3998 16.9216 12.1843 16.9216 12C16.9216 11.8157 16.8577 11.6002 16.5753 11.2301C16.2797 10.8426 15.8229 10.3836 15.1412 9.70191L14.9697 9.53033C14.6768 9.23744 14.6768 8.76257 14.9697 8.46967ZM7.96986 8.46967C8.26275 8.17678 8.73762 8.17678 9.03052 8.46967C9.32341 8.76257 9.32341 9.23744 9.03052 9.53033L8.85894 9.70191C8.17729 10.3836 7.72052 10.8426 7.42488 11.2301C7.14245 11.6002 7.07861 11.8157 7.07861 12C7.07861 12.1843 7.14245 12.3998 7.42488 12.7699C7.72052 13.1574 8.17729 13.6164 8.85894 14.2981L9.03052 14.4697C9.32341 14.7626 9.32341 15.2374 9.03052 15.5303C8.73762 15.8232 8.26275 15.8232 7.96986 15.5303L7.76151 15.322C7.12617 14.6867 6.59638 14.1569 6.23235 13.6798C5.84811 13.1762 5.57861 12.6441 5.57861 12C5.57861 11.3559 5.84811 10.8238 6.23235 10.3202C6.59638 9.84308 7.12617 9.31331 7.76151 8.67801L7.96986 8.46967Z" fill="currentColor"></path></svg>
+    </template>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="index.html" aria-label="alekseitkachev.dev">
+                <span class="mark" data-logo></span>
+                <span class="wordmark mono"><b>alekseitkachev</b>.dev</span>
+            </a>
+            <div class="controls">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button onclick="setLanguage('en')" id="btn-en" class="mono active">EN</button>
+                    <button onclick="setLanguage('sr')" id="btn-sr" class="mono">SR</button>
+                </div>
+                <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </button>
-                <div class="lang-switch">
-                    <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
-                    <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="doc">
+        <div class="wrap">
+            <a href="index.html" class="back-link mono">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+                <span data-lang-inline="en" class="active">Back to home</span>
+                <span data-lang-inline="sr">Nazad na početnu</span>
+            </a>
+
+            <div class="doc-head">
+                <div>
+                    <h1 data-lang="en" class="active">Privacy Policy</h1>
+                    <h1 data-lang="sr">Politika privatnosti</h1>
+                    <p class="updated mono">
+                        <span data-lang-inline="en" class="active">Last updated · May 9, 2026</span>
+                        <span data-lang-inline="sr">Poslednje ažuriranje · 9. maj 2026.</span>
+                    </p>
+                </div>
+                <button onclick="window.print()" class="print-btn mono">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"></path></svg>
+                    <span data-lang-inline="en" class="active">Print / PDF</span>
+                    <span data-lang-inline="sr">Štampaj / PDF</span>
+                </button>
+            </div>
+
+            <!-- EN -->
+            <article class="prose" data-lang="en" class="active">
+                <p>Aleksei Tkachev pr Beograd ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile applications and services.</p>
+
+                <h2><span class="n">01</span>Information We Collect</h2>
+                <h3>1.1 Information You Provide</h3>
+                <p>We may collect information that you voluntarily provide to us, including:</p>
+                <ul>
+                    <li>Account registration information (name, email address)</li>
+                    <li>Profile information</li>
+                    <li>Communications you send to us</li>
+                    <li>Feedback and survey responses</li>
+                </ul>
+                <h3>1.2 Automatically Collected Information</h3>
+                <p>When you use our applications, we may automatically collect:</p>
+                <ul>
+                    <li>Device information (device type, operating system, unique device identifiers)</li>
+                    <li>Usage data (app features used, time spent in app)</li>
+                    <li>Log data (IP address, access times, crash reports)</li>
+                    <li>Location data (if you grant permission)</li>
+                </ul>
+
+                <h2><span class="n">02</span>How We Use Your Information</h2>
+                <p>We use the collected information for the following purposes:</p>
+                <ul>
+                    <li>To provide, maintain, and improve our applications</li>
+                    <li>To personalize your experience</li>
+                    <li>To communicate with you about updates, support, and promotional content</li>
+                    <li>To analyze usage patterns and improve our services</li>
+                    <li>To detect, prevent, and address technical issues and security vulnerabilities</li>
+                    <li>To comply with legal obligations</li>
+                </ul>
+
+                <h2><span class="n">03</span>Data Sharing and Disclosure</h2>
+                <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (analytics, hosting, customer support)</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                    <li><strong>With Your Consent:</strong> When you explicitly agree to share information</li>
+                </ul>
+
+                <h2><span class="n">04</span>Third-Party Services</h2>
+                <p>Our applications may use third-party services that collect information, including but not limited to:</p>
+                <ul>
+                    <li>Google Play Services</li>
+                    <li>Apple App Store Services</li>
+                    <li>Analytics providers (Google Analytics, Firebase Analytics)</li>
+                    <li>Advertising networks (if applicable)</li>
+                </ul>
+                <p>These services have their own privacy policies. We encourage you to review them.</p>
+
+                <h2><span class="n">05</span>Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+                <h2><span class="n">06</span>Data Retention</h2>
+                <p>We retain your information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law.</p>
+
+                <h2><span class="n">07</span>Your Rights</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to your personal information</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your information</li>
+                    <li><strong>Objection:</strong> Object to processing of your information</li>
+                    <li><strong>Data Portability:</strong> Request transfer of your data</li>
+                    <li><strong>Withdrawal of Consent:</strong> Withdraw consent at any time</li>
+                </ul>
+                <p>To exercise these rights, please contact us at: <strong>contact@alekseitkachev.dev</strong></p>
+
+                <h2><span class="n">08</span>Children's Privacy</h2>
+                <p>Our services are not directed to children under 13 (or the applicable age of digital consent in your country). We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.</p>
+
+                <h2><span class="n">09</span>International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.</p>
+
+                <h2><span class="n">10</span>Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically.</p>
+
+                <h2><span class="n">11</span>Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <div class="contact-block">
+                    <strong>Aleksei Tkachev pr Beograd</strong>
+                    Email: contact@alekseitkachev.dev<br>
+                    Address: Resavska 33, stan 1, Beograd, 11167, Serbia
+                </div>
+            </article>
+
+            <!-- SR -->
+            <article class="prose" data-lang="sr">
+                <p>Aleksei Tkachev pr Beograd ("mi", "naš" ili "nas") je posvećen zaštiti vaše privatnosti. Ova Politika privatnosti objašnjava kako prikupljamo, koristimo, otkrivamo i štitimo vaše informacije kada koristite naše mobilne aplikacije i usluge.</p>
+
+                <h2><span class="n">01</span>Informacije koje prikupljamo</h2>
+                <h3>1.1 Informacije koje pružate</h3>
+                <p>Možemo prikupljati informacije koje nam dobrovoljno pružate, uključujući:</p>
+                <ul>
+                    <li>Informacije o registraciji naloga (ime, email adresa)</li>
+                    <li>Informacije o profilu</li>
+                    <li>Komunikacije koje nam šaljete</li>
+                    <li>Povratne informacije i odgovore na ankete</li>
+                </ul>
+                <h3>1.2 Automatski prikupljene informacije</h3>
+                <p>Kada koristite naše aplikacije, možemo automatski prikupljati:</p>
+                <ul>
+                    <li>Informacije o uređaju (tip uređaja, operativni sistem, jedinstveni identifikatori uređaja)</li>
+                    <li>Podatke o upotrebi (korišćene funkcije aplikacije, vreme provedeno u aplikaciji)</li>
+                    <li>Log podatke (IP adresa, vreme pristupa, izveštaji o greškama)</li>
+                    <li>Podatke o lokaciji (ako date dozvolu)</li>
+                </ul>
+
+                <h2><span class="n">02</span>Kako koristimo vaše informacije</h2>
+                <p>Prikupljene informacije koristimo u sledeće svrhe:</p>
+                <ul>
+                    <li>Za pružanje, održavanje i poboljšanje naših aplikacija</li>
+                    <li>Za personalizaciju vašeg iskustva</li>
+                    <li>Za komunikaciju sa vama o ažuriranjima, podršci i promotivnom sadržaju</li>
+                    <li>Za analizu obrazaca upotrebe i poboljšanje naših usluga</li>
+                    <li>Za otkrivanje, sprečavanje i rešavanje tehničkih problema i sigurnosnih propusta</li>
+                    <li>Za usklađivanje sa pravnim obavezama</li>
+                </ul>
+
+                <h2><span class="n">03</span>Deljenje i otkrivanje podataka</h2>
+                <p>Ne prodajemo vaše lične informacije. Možemo deliti vaše informacije u sledećim okolnostima:</p>
+                <ul>
+                    <li><strong>Pružaoci usluga:</strong> Sa trećim stranama koje pružaju usluge u naše ime (analitika, hosting, korisnička podrška)</li>
+                    <li><strong>Zakonski zahtevi:</strong> Kada to zahteva zakon ili radi zaštite naših prava i sigurnosti</li>
+                    <li><strong>Poslovni transferi:</strong> U vezi sa spajanjem, preuzimanjem ili prodajom imovine</li>
+                    <li><strong>Sa vašom saglasnošću:</strong> Kada eksplicitno pristanete na deljenje informacija</li>
+                </ul>
+
+                <h2><span class="n">04</span>Usluge trećih strana</h2>
+                <p>Naše aplikacije mogu koristiti usluge trećih strana koje prikupljaju informacije, uključujući ali ne ograničavajući se na:</p>
+                <ul>
+                    <li>Google Play usluge</li>
+                    <li>Apple App Store usluge</li>
+                    <li>Pružaoce analitike (Google Analytics, Firebase Analytics)</li>
+                    <li>Oglasne mreže (ako je primenljivo)</li>
+                </ul>
+                <p>Ove usluge imaju svoje politike privatnosti. Preporučujemo vam da ih pregledate.</p>
+
+                <h2><span class="n">05</span>Sigurnost podataka</h2>
+                <p>Primenjujemo odgovarajuće tehničke i organizacione mere za zaštitu vaših informacija od neovlašćenog pristupa, izmene, otkrivanja ili uništenja. Međutim, nijedan metod prenosa preko interneta ili elektronskog skladištenja nije 100% siguran.</p>
+
+                <h2><span class="n">06</span>Čuvanje podataka</h2>
+                <p>Čuvamo vaše informacije onoliko dugo koliko je potrebno za pružanje naših usluga i ispunjenje svrha navedenih u ovoj Politici privatnosti, osim ako zakon zahteva duži period čuvanja.</p>
+
+                <h2><span class="n">07</span>Vaša prava</h2>
+                <p>U zavisnosti od vaše lokacije, možete imati sledeća prava:</p>
+                <ul>
+                    <li><strong>Pristup:</strong> Zahtevanje pristupa vašim ličnim informacijama</li>
+                    <li><strong>Ispravka:</strong> Zahtevanje ispravke netačnih informacija</li>
+                    <li><strong>Brisanje:</strong> Zahtevanje brisanja vaših informacija</li>
+                    <li><strong>Prigovor:</strong> Prigovor na obradu vaših informacija</li>
+                    <li><strong>Prenosivost podataka:</strong> Zahtevanje prenosa vaših podataka</li>
+                    <li><strong>Povlačenje saglasnosti:</strong> Povlačenje saglasnosti u bilo kom trenutku</li>
+                </ul>
+                <p>Da biste ostvarili ova prava, kontaktirajte nas na: <strong>contact@alekseitkachev.dev</strong></p>
+
+                <h2><span class="n">08</span>Privatnost dece</h2>
+                <p>Naše usluge nisu namenjene deci mlađoj od 13 godina (ili primenljive starosti digitalnog pristanka u vašoj zemlji). Svesno ne prikupljamo lične informacije od dece. Ako verujete da smo prikupili informacije od deteta, molimo vas da nas odmah kontaktirate.</p>
+
+                <h2><span class="n">09</span>Međunarodni transferi podataka</h2>
+                <p>Vaše informacije mogu biti prenete i obrađene u zemljama drugim od vaše zemlje boravka. Osiguravamo da su na snazi odgovarajuće zaštitne mere za zaštitu vaših informacija u skladu sa ovom Politikom privatnosti.</p>
+
+                <h2><span class="n">10</span>Izmene ove Politike privatnosti</h2>
+                <p>Možemo povremeno ažurirati ovu Politiku privatnosti. Obavestićemo vas o svim promenama objavljivanjem nove Politike privatnosti na ovoj stranici i ažuriranjem datuma "Poslednje ažuriranje". Savetujemo vam da periodično pregledate ovu Politiku privatnosti.</p>
+
+                <h2><span class="n">11</span>Kontaktirajte nas</h2>
+                <p>Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, molimo vas kontaktirajte nas:</p>
+                <div class="contact-block">
+                    <strong>Aleksei Tkachev pr Beograd</strong>
+                    Email: contact@alekseitkachev.dev<br>
+                    Adresa: Resavska 33, stan 1, Beograd, 11167, Srbija
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="mark" data-logo></span>
+                    <span class="name">Aleksei Tkachev pr Beograd
+                        <span class="mono">
+                            <span data-lang-inline="en" class="active">Software Development Studio · Belgrade</span>
+                            <span data-lang-inline="sr">Razvojna softverska studija · Beograd</span>
+                        </span>
+                    </span>
                 </div>
             </div>
-            <a href="index.html" class="back-link">← <span data-lang-inline="en" class="active">Back to Home</span><span data-lang-inline="sr">Nazad na početnu</span></a>
-        </header>
 
-        <div data-lang="en" class="active">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: May 9, 2026</p>
-
-            <div class="privacy-actions">
-                <button onclick="window.print()" class="action-button">
-                    📄 <span>Download PDF / Print</span>
-                </button>
+            <div class="footer-bottom">
+                <span class="copyright mono">© 2026 Aleksei Tkachev pr Beograd.
+                    <span data-lang-inline="en" class="active">All rights reserved.</span>
+                    <span data-lang-inline="sr">Sva prava zadržana.</span>
+                </span>
+                <span class="footer-link">
+                    <a href="index.html">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+                        <span data-lang-inline="en" class="active">Back to home</span>
+                        <span data-lang-inline="sr">Nazad na početnu</span>
+                    </a>
+                </span>
             </div>
-
-            <p>Aleksei Tkachev pr Beograd ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile applications and services.</p>
-
-            <h2>1. Information We Collect</h2>
-            
-            <h3>1.1 Information You Provide</h3>
-            <p>We may collect information that you voluntarily provide to us, including:</p>
-            <ul>
-                <li>Account registration information (name, email address)</li>
-                <li>Profile information</li>
-                <li>Communications you send to us</li>
-                <li>Feedback and survey responses</li>
-            </ul>
-
-            <h3>1.2 Automatically Collected Information</h3>
-            <p>When you use our applications, we may automatically collect:</p>
-            <ul>
-                <li>Device information (device type, operating system, unique device identifiers)</li>
-                <li>Usage data (app features used, time spent in app)</li>
-                <li>Log data (IP address, access times, crash reports)</li>
-                <li>Location data (if you grant permission)</li>
-            </ul>
-
-            <h2>2. How We Use Your Information</h2>
-            <p>We use the collected information for the following purposes:</p>
-            <ul>
-                <li>To provide, maintain, and improve our applications</li>
-                <li>To personalize your experience</li>
-                <li>To communicate with you about updates, support, and promotional content</li>
-                <li>To analyze usage patterns and improve our services</li>
-                <li>To detect, prevent, and address technical issues and security vulnerabilities</li>
-                <li>To comply with legal obligations</li>
-            </ul>
-
-            <h2>3. Data Sharing and Disclosure</h2>
-            <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
-            <ul>
-                <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (analytics, hosting, customer support)</li>
-                <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
-                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-                <li><strong>With Your Consent:</strong> When you explicitly agree to share information</li>
-            </ul>
-
-            <h2>4. Third-Party Services</h2>
-            <p>Our applications may use third-party services that collect information, including but not limited to:</p>
-            <ul>
-                <li>Google Play Services</li>
-                <li>Apple App Store Services</li>
-                <li>Analytics providers (Google Analytics, Firebase Analytics)</li>
-                <li>Advertising networks (if applicable)</li>
-            </ul>
-            <p>These services have their own privacy policies. We encourage you to review them.</p>
-
-            <h2>5. Data Security</h2>
-            <p>We implement appropriate technical and organizational measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
-
-            <h2>6. Data Retention</h2>
-            <p>We retain your information for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required by law.</p>
-
-            <h2>7. Your Rights</h2>
-            <p>Depending on your location, you may have the following rights:</p>
-            <ul>
-                <li><strong>Access:</strong> Request access to your personal information</li>
-                <li><strong>Correction:</strong> Request correction of inaccurate information</li>
-                <li><strong>Deletion:</strong> Request deletion of your information</li>
-                <li><strong>Objection:</strong> Object to processing of your information</li>
-                <li><strong>Data Portability:</strong> Request transfer of your data</li>
-                <li><strong>Withdrawal of Consent:</strong> Withdraw consent at any time</li>
-            </ul>
-            <p>To exercise these rights, please contact us at: <strong>contact@alekseitkachev.dev</strong></p>
-
-            <h2>8. Children's Privacy</h2>
-            <p>Our services are not directed to children under 13 (or the applicable age of digital consent in your country). We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.</p>
-
-            <h2>9. International Data Transfers</h2>
-            <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.</p>
-
-            <h2>10. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically.</p>
-
-            <h2>11. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            <p>
-                <strong>Aleksei Tkachev pr Beograd</strong><br>
-                Email: contact@alekseitkachev.dev<br>
-                Address: RESAVSKA 33, stan 1, BEOGRAD, 11167, Serbia
-            </p>
-        </div>
-
-        <div data-lang="sr">
-            <h1>Politika privatnosti</h1>
-            <p class="last-updated">Poslednje ažuriranje: 9. maj 2026.</p>
-
-            <div class="privacy-actions">
-                <button onclick="window.print()" class="action-button">
-                    📄 <span>Preuzmi PDF / Odštampaj</span>
-                </button>
-            </div>
-
-            <p>Aleksei Tkachev pr Beograd ("mi", "naš" ili "nas") je posvećen zaštiti vaše privatnosti. Ova Politika privatnosti objašnjava kako prikupljamo, koristimo, otkrivamo i štitimo vaše informacije kada koristite naše mobilne aplikacije i usluge.</p>
-
-            <h2>1. Informacije koje prikupljamo</h2>
-            
-            <h3>1.1 Informacije koje pružate</h3>
-            <p>Možemo prikupljati informacije koje nam dobrovoljno pružate, uključujući:</p>
-            <ul>
-                <li>Informacije o registraciji naloga (ime, email adresa)</li>
-                <li>Informacije o profilu</li>
-                <li>Komunikacije koje nam šaljete</li>
-                <li>Povratne informacije i odgovore na ankete</li>
-            </ul>
-
-            <h3>1.2 Automatski prikupljene informacije</h3>
-            <p>Kada koristite naše aplikacije, možemo automatski prikupljati:</p>
-            <ul>
-                <li>Informacije o uređaju (tip uređaja, operativni sistem, jedinstveni identifikatori uređaja)</li>
-                <li>Podatke o upotrebi (korišćene funkcije aplikacije, vreme provedeno u aplikaciji)</li>
-                <li>Log podatke (IP adresa, vreme pristupa, izveštaji o greškama)</li>
-                <li>Podatke o lokaciji (ako date dozvolu)</li>
-            </ul>
-
-            <h2>2. Kako koristimo vaše informacije</h2>
-            <p>Prikupljene informacije koristimo u sledeće svrhe:</p>
-            <ul>
-                <li>Za pružanje, održavanje i poboljšanje naših aplikacija</li>
-                <li>Za personalizaciju vašeg iskustva</li>
-                <li>Za komunikaciju sa vama o ažuriranjima, podršci i promotivnom sadržaju</li>
-                <li>Za analizu obrazaca upotrebe i poboljšanje naših usluga</li>
-                <li>Za otkrivanje, sprečavanje i rešavanje tehničkih problema i sigurnosnih propusta</li>
-                <li>Za usklađivanje sa pravnim obavezama</li>
-            </ul>
-
-            <h2>3. Deljenje i otkrivanje podataka</h2>
-            <p>Ne prodajemo vaše lične informacije. Možemo deliti vaše informacije u sledećim okolnostima:</p>
-            <ul>
-                <li><strong>Pružaoci usluga:</strong> Sa trećim stranama koje pružaju usluge u naše ime (analitika, hosting, korisnička podrška)</li>
-                <li><strong>Zakonski zahtevi:</strong> Kada to zahteva zakon ili radi zaštite naših prava i sigurnosti</li>
-                <li><strong>Poslovni transferi:</strong> U vezi sa spajanjem, preuzimanjem ili prodajom imovine</li>
-                <li><strong>Sa vašom saglasnošću:</strong> Kada eksplicitno pristanete na deljenje informacija</li>
-            </ul>
-
-            <h2>4. Usluge trećih strana</h2>
-            <p>Naše aplikacije mogu koristiti usluge trećih strana koje prikupljaju informacije, uključujući ali ne ograničavajući se na:</p>
-            <ul>
-                <li>Google Play usluge</li>
-                <li>Apple App Store usluge</li>
-                <li>Pružaoce analitike (Google Analytics, Firebase Analytics)</li>
-                <li>Oglasne mreže (ako je primenljivo)</li>
-            </ul>
-            <p>Ove usluge imaju svoje politike privatnosti. Preporučujemo vam da ih pregledate.</p>
-
-            <h2>5. Sigurnost podataka</h2>
-            <p>Primenjujemo odgovarajuće tehničke i organizacione mere za zaštitu vaših informacija od neovlašćenog pristupa, izmene, otkrivanja ili uništenja. Međutim, nijedan metod prenosa preko interneta ili elektronskog skladištenja nije 100% siguran.</p>
-
-            <h2>6. Čuvanje podataka</h2>
-            <p>Čuvamo vaše informacije onoliko dugo koliko je potrebno za pružanje naših usluga i ispunjenje svrha navedenih u ovoj Politici privatnosti, osim ako zakon zahteva duži period čuvanja.</p>
-
-            <h2>7. Vaša prava</h2>
-            <p>U zavisnosti od vaše lokacije, možete imati sledeća prava:</p>
-            <ul>
-                <li><strong>Pristup:</strong> Zahtevanje pristupa vašim ličnim informacijama</li>
-                <li><strong>Ispravka:</strong> Zahtevanje ispravke netačnih informacija</li>
-                <li><strong>Brisanje:</strong> Zahtevanje brisanja vaših informacija</li>
-                <li><strong>Prigovor:</strong> Prigovor na obradu vaših informacija</li>
-                <li><strong>Prenosivost podataka:</strong> Zahtevanje prenosa vaših podataka</li>
-                <li><strong>Povlačenje saglasnosti:</strong> Povlačenje saglasnosti u bilo kom trenutku</li>
-            </ul>
-            <p>Da biste ostvarili ova prava, kontaktirajte nas na: <strong>contact@alekseitkachev.dev</strong></p>
-
-            <h2>8. Privatnost dece</h2>
-            <p>Naše usluge nisu namenjene deci mlađoj od 13 godina (ili primenljive starosti digitalnog pristanka u vašoj zemlji). Svesno ne prikupljamo lične informacije od dece. Ako verujete da smo prikupili informacije od deteta, molimo vas da nas odmah kontaktirate.</p>
-
-            <h2>9. Međunarodni transferi podataka</h2>
-            <p>Vaše informacije mogu biti prenete i obrađene u zemljama drugim od vaše zemlje boravka. Osiguravamo da su na snazi odgovarajuće zaštitne mere za zaštitu vaših informacija u skladu sa ovom Politikom privatnosti.</p>
-
-            <h2>10. Izmene ove Politike privatnosti</h2>
-            <p>Možemo povremeno ažurirati ovu Politiku privatnosti. Obavestićemo vas o svim promenama objavljivanjem nove Politike privatnosti na ovoj stranici i ažuriranjem datuma "Poslednje ažuriranje". Savetujemo vam da periodično pregledate ovu Politiku privatnosti.</p>
-
-            <h2>11. Kontaktirajte nas</h2>
-            <p>Ako imate bilo kakvih pitanja o ovoj Politici privatnosti, molimo vas kontaktirajte nas:</p>
-            <p>
-                <strong>Aleksei Tkachev pr Beograd</strong><br>
-                Email: contact@alekseitkachev.dev<br>
-                Adresa: RESAVSKA 33, stan 1, BEOGRAD, 11167, Srbija
-            </p>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-<div class="legal-info" data-lang="en" class="active">
-                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
-                <p>D-U-N-S® number: 369917937</p>
-                <p>RESAVSKA 33, BELGRADE, Serbia</p>
-                <p>Post office: 11167 BEOGRAD 113</p>
-                <p>Postal number: PAK 125305</p>
-                <p>Registration number: 68512867</p>
-                <p>Tax identification number (PIB): 115631550</p>
-            </div>
-            
-            <div class="legal-info" data-lang="sr">
-                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
-                <p>D-U-N-S® broj: 369917937</p>
-                <p>RESAVSKA 33, BEOGRAD, Srbija</p>
-                <p>Pošta: 11167 BEOGRAD 113</p>
-                <p>Poštanski broj: PAK 125305</p>
-                <p>Matični broj: 68512867</p>
-                <p>PIB: 115631550</p>
-            </div>
-            
-            <p class="footer-link">
-                <a href="index.html">
-                    <span data-lang-inline="en" class="active">Back to Home</span>
-                    <span data-lang-inline="sr">Nazad na početnu</span>
-                </a>
-            </p>
-            
-            <p class="copyright">© 2026 Aleksei Tkachev pr Beograd. <span data-lang-inline="en" class="active">All rights reserved.</span><span data-lang-inline="sr">Sva prava zadržana.</span></p>
         </div>
     </footer>
 
-    <script src="script-0f1hc2.js"></script>
+    <script src="script-9k2m4p.js"></script>
 </body>
 </html>

@@ -7,201 +7,334 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-8SFFWRVCMS');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksei Tkachev pr Beograd - Software Development Studio</title>
+    <title>Aleksei Tkachev pr Beograd — Software Development Studio</title>
+    <meta name="description" content="Software development studio based in Belgrade, Serbia. 12+ years building mobile apps, web platforms and games. Registered business entity in the Republic of Serbia.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles-0f1hc2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-9k2m4p.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-controls">
-                <button onclick="toggleTheme()" class="theme-toggle">
-                    <span id="theme-icon">🌙</span>
+    <!-- reusable logo glyph kept as a template -->
+    <template id="logo-svg">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM13.4881 6.44591C13.8882 6.55311 14.1256 6.96437 14.0184 7.36447L11.4302 17.0237C11.323 17.4238 10.9117 17.6613 10.5116 17.5541C10.1115 17.4468 9.8741 17.0356 9.98131 16.6355L12.5695 6.97624C12.6767 6.57614 13.088 6.3387 13.4881 6.44591ZM14.9697 8.46967C15.2626 8.17678 15.7374 8.17678 16.0303 8.46967L16.2387 8.67801C16.874 9.3133 17.4038 9.84308 17.7678 10.3202C18.1521 10.8238 18.4216 11.3559 18.4216 12C18.4216 12.6441 18.1521 13.1762 17.7678 13.6798C17.4038 14.1569 16.874 14.6867 16.2387 15.322L16.0303 15.5303C15.7374 15.8232 15.2626 15.8232 14.9697 15.5303C14.6768 15.2374 14.6768 14.7626 14.9697 14.4697L15.1412 14.2981C15.8229 13.6164 16.2797 13.1574 16.5753 12.7699C16.8577 12.3998 16.9216 12.1843 16.9216 12C16.9216 11.8157 16.8577 11.6002 16.5753 11.2301C16.2797 10.8426 15.8229 10.3836 15.1412 9.70191L14.9697 9.53033C14.6768 9.23744 14.6768 8.76257 14.9697 8.46967ZM7.96986 8.46967C8.26275 8.17678 8.73762 8.17678 9.03052 8.46967C9.32341 8.76257 9.32341 9.23744 9.03052 9.53033L8.85894 9.70191C8.17729 10.3836 7.72052 10.8426 7.42488 11.2301C7.14245 11.6002 7.07861 11.8157 7.07861 12C7.07861 12.1843 7.14245 12.3998 7.42488 12.7699C7.72052 13.1574 8.17729 13.6164 8.85894 14.2981L9.03052 14.4697C9.32341 14.7626 9.32341 15.2374 9.03052 15.5303C8.73762 15.8232 8.26275 15.8232 7.96986 15.5303L7.76151 15.322C7.12617 14.6867 6.59638 14.1569 6.23235 13.6798C5.84811 13.1762 5.57861 12.6441 5.57861 12C5.57861 11.3559 5.84811 10.8238 6.23235 10.3202C6.59638 9.84308 7.12617 9.31331 7.76151 8.67801L7.96986 8.46967Z" fill="currentColor"></path></svg>
+    </template>
+
+    <!-- ============ TOP BAR ============ -->
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="#top" aria-label="alekseitkachev.dev">
+                <span class="mark" data-logo></span>
+                <span class="wordmark mono"><b>alekseitkachev</b>.dev</span>
+            </a>
+            <div class="controls">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button onclick="setLanguage('en')" id="btn-en" class="mono active">EN</button>
+                    <button onclick="setLanguage('sr')" id="btn-sr" class="mono">SR</button>
+                </div>
+                <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </button>
-                <div class="lang-switch">
-                    <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
-                    <button onclick="setLanguage('sr')" id="btn-sr">Srpski</button>
-                </div>
             </div>
-            <div class="header-title">
-                <img src="favicon.svg" alt="Logo" class="header-logo">
-                <div class="header-text">
-                    <h1>Aleksei Tkachev pr Beograd</h1>
-                    <p class="subtitle" data-lang="en" class="active">Software Development Studio</p>
-                    <p class="subtitle" data-lang="sr">Razvojna softverska studija</p>
-                    <div class="status-badge" data-lang="en">Registered Business Entity in the Republic of Serbia</div>
-                    <div class="status-badge" data-lang="sr">Registrovano poslovno lice u Republici Srbiji</div>
-                </div>
-            </div>
-        </header>
-    <div class="developer-badges">
-        <!-- Apple Badge - changes with theme -->
-        <div class="dev-badge">
-            <img src="apple-badge-black.svg" alt="Download on the App Store" class="dev-badge-light">
-            <img src="apple-badge-white.svg" alt="Download on the App Store" class="dev-badge-dark">
         </div>
-        
-        <!-- Google Play Badge - same for both themes -->
-        <div class="dev-badge">
-            <img src="google-play-badge.png" alt="Get it on Google Play">
-        </div>
-    </div>
-        <section>
-            <h2 data-lang="en" class="active">About Us</h2>
-            <h2 data-lang="sr">O nama</h2>
-            
-            <div data-lang="en" class="active">
-                <p class="about-text">
-                    We are a software development studio based in Belgrade, Serbia, with over 12 years of experience 
-                    delivering commercial software solutions. Operating as a registered business entity in the Republic 
-                    of Serbia, we specialize in creating high-quality mobile applications, web platforms, and interactive 
-                    digital experiences.
+    </header>
+
+    <main id="top">
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="wrap">
+                <span class="kicker mono reveal">
+                    <span class="tick"></span>
+                    <span data-lang-inline="en" class="active">Software Development Studio</span>
+                    <span data-lang-inline="sr">Razvojna softverska studija</span>
+                </span>
+
+                <h1 class="reveal d1">Aleksei Tkachev<br>pr Beograd</h1>
+
+                <p class="lede reveal d2" data-lang="en" class="active">
+                    A Belgrade-based studio engineering mobile apps, web platforms and
+                    interactive experiences — built to scale and maintained to last.
                 </p>
-                <p class="about-text">
-                    Our team combines expertise in full-stack development, native mobile applications, and game development 
-                    to deliver comprehensive solutions for clients worldwide. We work with modern technologies including 
-                    .NET, React, iOS, and Android platforms, focusing on scalable architecture and maintainable code.
+                <p class="lede reveal d2" data-lang="sr">
+                    Studio iz Beograda koji gradi mobilne aplikacije, web platforme i
+                    interaktivna iskustva — projektovana da rastu i održavana da traju.
                 </p>
-            </div>
 
-            <div data-lang="sr">
-                <p class="about-text">
-                    Mi smo razvojna softverska studija sa sedištem u Beogradu, Srbija, sa preko 12 godina iskustva u 
-                    isporuci komercijalnih softverskih rešenja. Poslujemo kao registrovano poslovno lice u Republici 
-                    Srbiji i specijalizovani smo za kreiranje kvalitetnih mobilnih aplikacija, web platformi i 
-                    interaktivnih digitalnih iskustava.
-                </p>
-                <p class="about-text">
-                    Naš tim kombinuje ekspertizu u full-stack razvoju, nativnim mobilnim aplikacijama i razvoju igara 
-                    kako bi isporučio sveobuhvatna rešenja za klijente širom sveta. Radimo sa modernim tehnologijama 
-                    uključujući .NET, React, iOS i Android platforme, fokusirajući se na skalabilnu arhitekturu i 
-                    održiv kod.
-                </p>
-            </div>
-        </section>
+                <span class="hero-status reveal d3 mono" data-lang="en" class="active">
+                    <span class="dot"></span>Registered Business Entity · Republic of Serbia
+                </span>
+                <span class="hero-status reveal d3 mono" data-lang="sr">
+                    <span class="dot"></span>Registrovano poslovno lice · Republika Srbija
+                </span>
 
-        <section>
-            <h2 data-lang="en" class="active">Services</h2>
-            <h2 data-lang="sr">Usluge</h2>
-
-            <ul class="services-list" data-lang="en" class="active">
-                <li>Native iOS and Android application development</li>
-                <li>Full-stack web development using .NET and React</li>
-                <li>Game development and interactive experiences</li>
-                <li>Software architecture and technical consulting</li>
-                <li>API design and backend development</li>
-                <li>Code review and quality assurance</li>
-            </ul>
-
-            <ul class="services-list" data-lang="sr">
-                <li>Razvoj nativnih iOS i Android aplikacija</li>
-                <li>Full-stack web razvoj koristeći .NET i React</li>
-                <li>Razvoj igara i interaktivnih iskustava</li>
-                <li>Softverska arhitektura i tehnički konsalting</li>
-                <li>Dizajn API-ja i backend razvoj</li>
-                <li>Pregled koda i obezbeđenje kvaliteta</li>
-            </ul>
-
-            <div class="skills">
-                <span class="skill-tag">iOS Development</span>
-                <span class="skill-tag">Android Development</span>
-                <span class="skill-tag">.NET</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">PGSQL</span>
-                <span class="skill-tag">T-SQL</span>
-                <span class="skill-tag">Flutter</span>
-                <span class="skill-tag">Dart</span>
-                <span class="skill-tag">DevOps</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Azure</span>
-                <span class="skill-tag">GCP</span>
-                <span class="skill-tag">Full-Stack Development</span>
-                <span class="skill-tag">Game Development</span>
-                <span class="skill-tag">Unity 3D</span>
-            </div>
-        </section>
-
-        <section>
-            <h2 data-lang="en" class="active">Contact</h2>
-            <h2 data-lang="sr">Kontakt</h2>
-            
-            <div class="contact-info">
-                <p data-lang="en" class="active"><strong>Email:</strong> contact@alekseitkachev.dev</p>
-                <p data-lang="sr"><strong>Email:</strong> contact@alekseitkachev.dev</p>
-                
-                <p data-lang="en" class="active"><strong>Location:</strong> Belgrade, Serbia</p>
-                <p data-lang="sr"><strong>Lokacija:</strong> Beograd, Srbija</p>
-                
-                <p data-lang="en" class="active"><strong>Website:</strong> alekseitkachev.dev</p>
-                <p data-lang="sr"><strong>Website:</strong> alekseitkachev.dev</p>
-            </div>
-        </section>
-
-        <section>
-            <h2 data-lang="en" class="active">Developer Platforms</h2>
-            <h2 data-lang="sr">Platforme za razvoj</h2>
-            
-            <div class="developer-badges">
-                <!-- Apple Badge - changes with theme -->
-                <div class="dev-badge">
-                    <img src="apple-badge-black.svg" alt="Download on the App Store" class="dev-badge-light">
-                    <img src="apple-badge-white.svg" alt="Download on the App Store" class="dev-badge-dark">
-                </div>
-                
-                <!-- Google Play Badge - same for both themes -->
-                <div class="dev-badge">
-                    <img src="google-play-badge.png" alt="Get it on Google Play">
+                <div class="stat-strip reveal d3">
+                    <div class="stat">
+                        <span class="v mono">12<span class="unit">+</span></span>
+                        <span class="k">
+                            <span data-lang-inline="en" class="active">Years experience</span>
+                            <span data-lang-inline="sr">Godina iskustva</span>
+                        </span>
+                    </div>
+                    <div class="stat">
+                        <span class="v mono">Belgrade</span>
+                        <span class="k">
+                            <span data-lang-inline="en" class="active">Serbia · Worldwide</span>
+                            <span data-lang-inline="sr">Srbija · Globalno</span>
+                        </span>
+                    </div>
+                    <div class="stat">
+                        <span class="v mono">iOS · Android · Web</span>
+                        <span class="k">
+                            <span data-lang-inline="en" class="active">Platforms</span>
+                            <span data-lang-inline="sr">Platforme</span>
+                        </span>
+                    </div>
                 </div>
             </div>
-            
-            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.95em;" data-lang="en" class="active">
-                Applications coming soon.
-            </p>
-            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.95em;" data-lang="sr">
-                Aplikacije uskoro dostupne.
-            </p>
         </section>
-    </div>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section section-rule">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="idx mono">01</span>
+                    <h2 data-lang="en" class="active">About</h2>
+                    <h2 data-lang="sr">O nama</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div data-lang="en" class="active">
+                        <p class="about-lead reveal d1">
+                            We are a software development studio based in Belgrade, Serbia, with
+                            <strong>over 12 years of experience</strong> delivering commercial
+                            software — high-quality mobile applications, web platforms and
+                            interactive digital experiences.
+                        </p>
+                    </div>
+                    <div data-lang="sr">
+                        <p class="about-lead reveal d1">
+                            Mi smo razvojna softverska studija sa sedištem u Beogradu, Srbija, sa
+                            <strong>preko 12 godina iskustva</strong> u isporuci komercijalnog
+                            softvera — kvalitetnih mobilnih aplikacija, web platformi i
+                            interaktivnih digitalnih iskustava.
+                        </p>
+                    </div>
+
+                    <div data-lang="en" class="active">
+                        <p class="about-body reveal d2">
+                            Our team combines full-stack development, native mobile applications
+                            and game development to deliver comprehensive solutions for clients
+                            worldwide. We work with modern technologies including .NET, React, iOS
+                            and Android — focusing on scalable architecture and maintainable code.
+                        </p>
+                    </div>
+                    <div data-lang="sr">
+                        <p class="about-body reveal d2">
+                            Naš tim kombinuje full-stack razvoj, nativne mobilne aplikacije i
+                            razvoj igara kako bi isporučio sveobuhvatna rešenja za klijente širom
+                            sveta. Radimo sa modernim tehnologijama uključujući .NET, React, iOS i
+                            Android — fokusirajući se na skalabilnu arhitekturu i održiv kod.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="section section-rule">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="idx mono">02</span>
+                    <h2 data-lang="en" class="active">Services</h2>
+                    <h2 data-lang="sr">Usluge</h2>
+                </div>
+
+                <!-- EN -->
+                <div class="services-grid" data-lang="en" class="active">
+                    <article class="svc reveal d1"><span class="num mono">S—01</span><h3>Native iOS &amp; Android application development</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d1"><span class="num mono">S—02</span><h3>Full-stack web development with .NET &amp; React</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d2"><span class="num mono">S—03</span><h3>Game development &amp; interactive experiences</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d2"><span class="num mono">S—04</span><h3>Software architecture &amp; technical consulting</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d3"><span class="num mono">S—05</span><h3>API design &amp; backend development</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d3"><span class="num mono">S—06</span><h3>Code review &amp; quality assurance</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                </div>
+                <!-- SR -->
+                <div class="services-grid" data-lang="sr">
+                    <article class="svc reveal d1"><span class="num mono">S—01</span><h3>Razvoj nativnih iOS i Android aplikacija</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d1"><span class="num mono">S—02</span><h3>Full-stack web razvoj uz .NET i React</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d2"><span class="num mono">S—03</span><h3>Razvoj igara i interaktivnih iskustava</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d2"><span class="num mono">S—04</span><h3>Softverska arhitektura i tehnički konsalting</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d3"><span class="num mono">S—05</span><h3>Dizajn API-ja i backend razvoj</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                    <article class="svc reveal d3"><span class="num mono">S—06</span><h3>Pregled koda i obezbeđenje kvaliteta</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
+                </div>
+
+                <div class="stack-block reveal">
+                    <div class="stack-label mono">
+                        <span data-lang-inline="en" class="active">Stack &amp; Tooling</span>
+                        <span data-lang-inline="sr">Tehnologije</span>
+                    </div>
+                    <div class="stack mono">
+                        <span class="tag">iOS</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">.NET</span>
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">T-SQL</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">DevOps</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Azure</span>
+                        <span class="tag">GCP</span>
+                        <span class="tag">Unity 3D</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section section-rule">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="idx mono">03</span>
+                    <h2 data-lang="en" class="active">Contact</h2>
+                    <h2 data-lang="sr">Kontakt</h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-cta reveal d1">
+                        <span class="label mono">
+                            <span data-lang-inline="en" class="active">Start a project</span>
+                            <span data-lang-inline="sr">Započnite projekat</span>
+                        </span>
+                        <h3 data-lang="en" class="active">Have something to build?<br>Let's talk.</h3>
+                        <h3 data-lang="sr">Imate ideju za razvoj?<br>Javite se.</h3>
+
+                        <button class="email-btn mono" id="email-btn" onclick="copyEmail()">
+                            <span class="addr">contact@alekseitkachev.dev</span>
+                            <svg class="copy-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <svg class="check-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        </button>
+                        <span class="copy-hint mono" id="copy-hint">
+                            <span data-lang-inline="en" class="active">Click to copy · or open in your mail app</span>
+                            <span data-lang-inline="sr">Kliknite da kopirate · ili otvorite u mejlu</span>
+                        </span>
+                    </div>
+
+                    <div class="contact-meta reveal d2">
+                        <div class="meta-row">
+                            <span class="k mono">
+                                <span data-lang-inline="en" class="active">Location</span>
+                                <span data-lang-inline="sr">Lokacija</span>
+                            </span>
+                            <span class="val">
+                                <span data-lang-inline="en" class="active">Belgrade, Serbia</span>
+                                <span data-lang-inline="sr">Beograd, Srbija</span>
+                            </span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="k mono">Email</span>
+                            <a class="val mono" href="mailto:contact@alekseitkachev.dev">contact@alekseitkachev.dev</a>
+                        </div>
+                        <div class="meta-row">
+                            <span class="k mono">Website</span>
+                            <a class="val mono" href="https://alekseitkachev.dev">alekseitkachev.dev</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PLATFORMS ============ -->
+        <section class="section section-rule">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="idx mono">04</span>
+                    <h2 data-lang="en" class="active">Developer Platforms</h2>
+                    <h2 data-lang="sr">Platforme za razvoj</h2>
+                </div>
+
+                <div class="platforms-card reveal d1">
+                    <div class="ptext">
+                        <span class="soon mono"><span class="dot"></span>
+                            <span data-lang-inline="en" class="active">Coming soon</span>
+                            <span data-lang-inline="sr">Uskoro</span>
+                        </span>
+                        <p data-lang="en" class="active">Applications are on the way. They'll land on the App Store and Google Play soon.</p>
+                        <p data-lang="sr">Aplikacije su na putu. Uskoro stižu na App Store i Google Play.</p>
+                    </div>
+                    <div class="developer-badges">
+                        <div class="dev-badge">
+                            <img src="apple-badge-black.svg" alt="Download on the App Store" class="dev-badge-light">
+                            <img src="apple-badge-white.svg" alt="Download on the App Store" class="dev-badge-dark">
+                        </div>
+                        <div class="dev-badge">
+                            <img src="google-play-badge.png" alt="Get it on Google Play">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
     <footer>
-        <div class="footer-content">
-<div class="legal-info" data-lang="en" class="active">
-                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
-                <p>D-U-N-S® number: 369917937</p>
-                <p>RESAVSKA 33, BELGRADE, Serbia</p>
-                <p>Post office: 11167 BEOGRAD 113</p>
-                <p>Postal number: PAK 125305</p>
-                <p>Registration number: 68512867</p>
-                <p>Tax identification number (PIB): 115631550</p>
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="mark" data-logo></span>
+                    <span class="name">Aleksei Tkachev pr Beograd
+                        <span class="mono">
+                            <span data-lang-inline="en" class="active">Software Development Studio · Belgrade</span>
+                            <span data-lang-inline="sr">Razvojna softverska studija · Beograd</span>
+                        </span>
+                    </span>
+                </div>
             </div>
-            
-            <div class="legal-info" data-lang="sr">
-                <p><strong>Aleksei Tkachev pr Beograd</strong></p>
-                <p>D-U-N-S® broj: 369917937</p>
-                <p>RESAVSKA 33, BEOGRAD, Srbija</p>
-                <p>Pošta: 11167 BEOGRAD 113</p>
-                <p>Poštanski broj: PAK 125305</p>
-                <p>Matični broj: 68512867</p>
-                <p>PIB: 115631550</p>
+
+            <!-- EN legal -->
+            <div class="legal-grid" data-lang="en" class="active">
+                <div class="legal-cell"><span class="k mono">D-U-N-S®</span><span class="v mono">369917937</span></div>
+                <div class="legal-cell"><span class="k mono">Registration No.</span><span class="v mono">68512867</span></div>
+                <div class="legal-cell"><span class="k mono">Tax ID (PIB)</span><span class="v mono">115631550</span></div>
+                <div class="legal-cell"><span class="k mono">Address</span><span class="v">Resavska 33, Belgrade, Serbia</span></div>
+                <div class="legal-cell"><span class="k mono">Post office</span><span class="v">11167 Beograd 113</span></div>
+                <div class="legal-cell"><span class="k mono">Postal code</span><span class="v mono">PAK 125305</span></div>
             </div>
-            
-            <p class="footer-link">
-                <a href="privacy.html">
-                    <span data-lang-inline="en" class="active">Privacy Policy</span>
-                    <span data-lang-inline="sr">Politika privatnosti</span>
-                </a>
-            </p>
-            
-            <p class="copyright">© 2026 Aleksei Tkachev pr Beograd. <span data-lang-inline="en" class="active">All rights reserved.</span><span data-lang-inline="sr">Sva prava zadržana.</span></p>
+            <!-- SR legal -->
+            <div class="legal-grid" data-lang="sr">
+                <div class="legal-cell"><span class="k mono">D-U-N-S®</span><span class="v mono">369917937</span></div>
+                <div class="legal-cell"><span class="k mono">Matični broj</span><span class="v mono">68512867</span></div>
+                <div class="legal-cell"><span class="k mono">PIB</span><span class="v mono">115631550</span></div>
+                <div class="legal-cell"><span class="k mono">Adresa</span><span class="v">Resavska 33, Beograd, Srbija</span></div>
+                <div class="legal-cell"><span class="k mono">Pošta</span><span class="v">11167 Beograd 113</span></div>
+                <div class="legal-cell"><span class="k mono">Poštanski broj</span><span class="v mono">PAK 125305</span></div>
+            </div>
+
+            <div class="footer-bottom">
+                <span class="copyright mono">© 2026 Aleksei Tkachev pr Beograd.
+                    <span data-lang-inline="en" class="active">All rights reserved.</span>
+                    <span data-lang-inline="sr">Sva prava zadržana.</span>
+                </span>
+                <span class="footer-link">
+                    <a href="privacy.html">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span data-lang-inline="en" class="active">Privacy Policy</span>
+                        <span data-lang-inline="sr">Politika privatnosti</span>
+                    </a>
+                </span>
+            </div>
         </div>
     </footer>
 
-    <script src="script-0f1hc2.js"></script>
+    <script src="script-9k2m4p.js"></script>
 </body>
 </html>
