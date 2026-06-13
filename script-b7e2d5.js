@@ -9,14 +9,9 @@ function injectLogos() {
     });
 }
 
-/* ---- language ---- */
+/* ---- language (driven by <html lang>; CSS does the rest) ---- */
 function setLanguage(lang) {
-    document.querySelectorAll('[data-lang], [data-lang-inline]').forEach(el => {
-        el.classList.remove('active');
-    });
-    document.querySelectorAll(`[data-lang="${lang}"], [data-lang-inline="${lang}"]`).forEach(el => {
-        el.classList.add('active');
-    });
+    document.documentElement.lang = lang;
 
     const en = document.getElementById('btn-en');
     const sr = document.getElementById('btn-sr');
@@ -26,7 +21,6 @@ function setLanguage(lang) {
     }
 
     localStorage.setItem('preferredLanguage', lang);
-    document.documentElement.lang = lang;
 }
 
 /* ---- theme ---- */

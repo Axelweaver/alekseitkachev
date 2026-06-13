@@ -110,10 +110,19 @@ a { color: inherit; text-decoration: none; }
 .lang-switch button {
     font-family: inherit; font-size: 12px; font-weight: 500;
     letter-spacing: 0.03em;
+    display: inline-flex; align-items: center; gap: 7px;
     padding: 6px 11px; cursor: pointer;
     background: none; border: none; color: var(--text-3);
     transition: color 0.2s ease, background-color 0.2s ease;
 }
+.lang-switch .flag {
+    width: 19px; height: 13px; border-radius: 3px; overflow: hidden;
+    display: block; flex-shrink: 0;
+    background-size: cover; background-position: center;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.16);
+    opacity: 0.5; transition: opacity 0.2s ease;
+}
+.lang-switch button.active .flag, .lang-switch button:hover .flag { opacity: 1; }
 .lang-switch button + button { border-left: 1px solid var(--border); }
 .lang-switch button:hover { color: var(--text); }
 .lang-switch button.active { background: var(--accent); color: var(--on-accent); }
@@ -431,14 +440,19 @@ footer {
 /* ============================================================
    LANGUAGE VISIBILITY
    ============================================================ */
-[data-lang] { display: none; }
-[data-lang].active { display: block; }
-[data-lang-inline] { display: none; }
-[data-lang-inline].active { display: inline; }
+/* language switch is driven entirely by <html lang>, no .active needed */
+[data-lang], [data-lang-inline] { display: none; }
+html[lang="en"] [data-lang="en"],
+html[lang="sr"] [data-lang="sr"] { display: block; }
+html[lang="en"] [data-lang-inline="en"],
+html[lang="sr"] [data-lang-inline="sr"] { display: inline; }
 /* keep flex/grid components intact when they also carry data-lang */
-.hero-status[data-lang].active { display: inline-flex; }
-.services-grid[data-lang].active { display: grid; }
-.legal-grid[data-lang].active { display: grid; }
+html[lang="en"] .hero-status[data-lang="en"],
+html[lang="sr"] .hero-status[data-lang="sr"] { display: inline-flex; }
+html[lang="en"] .services-grid[data-lang="en"],
+html[lang="sr"] .services-grid[data-lang="sr"] { display: grid; }
+html[lang="en"] .legal-grid[data-lang="en"],
+html[lang="sr"] .legal-grid[data-lang="sr"] { display: grid; }
 
 /* ============================================================
    REVEAL ANIMATION
@@ -470,6 +484,16 @@ footer {
     .brand .wordmark { display: none; }
     .platforms-card { flex-direction: column; align-items: flex-start; }
     .section-head { flex-direction: column; gap: 8px; }
+    /* let the kicker wrap cleanly instead of overflowing */
+    .kicker { white-space: normal; letter-spacing: 0.1em; align-items: flex-start; gap: 8px; }
+    .kicker .tick { margin-top: 9px; }
+    /* status reads as a rounded card, not a stretched pill, when it wraps */
+    .hero-status {
+        align-items: flex-start; border-radius: 12px;
+        padding: 11px 15px; font-size: 12px; line-height: 1.45;
+        text-wrap: pretty;
+    }
+    .hero-status .dot { margin-top: 6px; }
 }
 
 /* ============================================================

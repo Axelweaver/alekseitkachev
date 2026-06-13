@@ -17,7 +17,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles-9k2m4p.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+    <link rel="stylesheet" href="styles-b7e2d5.css">
 </head>
 <body>
     <!-- reusable logo glyph kept as a template -->
@@ -34,8 +35,8 @@
             </a>
             <div class="controls">
                 <div class="lang-switch" role="group" aria-label="Language">
-                    <button onclick="setLanguage('en')" id="btn-en" class="mono active">EN</button>
-                    <button onclick="setLanguage('sr')" id="btn-sr" class="mono">SR</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="mono active" aria-label="English"><span class="flag fi fi-us"></span>EN</button>
+                    <button onclick="setLanguage('sr')" id="btn-sr" class="mono" aria-label="Srpski"><span class="flag fi fi-rs"></span>SR</button>
                 </div>
                 <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
                     <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
@@ -51,13 +52,13 @@
             <div class="wrap">
                 <span class="kicker mono reveal">
                     <span class="tick"></span>
-                    <span data-lang-inline="en" class="active">Software Development Studio</span>
+                    <span data-lang-inline="en">Software Development Studio</span>
                     <span data-lang-inline="sr">Razvojna softverska studija</span>
                 </span>
 
                 <h1 class="reveal d1">Aleksei Tkachev<br>pr Beograd</h1>
 
-                <p class="lede reveal d2" data-lang="en" class="active">
+                <p class="lede reveal d2" data-lang="en">
                     A Belgrade-based studio engineering mobile apps, web platforms and
                     interactive experiences — built to scale and maintained to last.
                 </p>
@@ -66,7 +67,7 @@
                     interaktivna iskustva — projektovana da rastu i održavana da traju.
                 </p>
 
-                <span class="hero-status reveal d3 mono" data-lang="en" class="active">
+                <span class="hero-status reveal d3 mono" data-lang="en">
                     <span class="dot"></span>Registered Business Entity · Republic of Serbia
                 </span>
                 <span class="hero-status reveal d3 mono" data-lang="sr">
@@ -77,21 +78,21 @@
                     <div class="stat">
                         <span class="v mono">12<span class="unit">+</span></span>
                         <span class="k">
-                            <span data-lang-inline="en" class="active">Years experience</span>
+                            <span data-lang-inline="en">Years experience</span>
                             <span data-lang-inline="sr">Godina iskustva</span>
                         </span>
                     </div>
                     <div class="stat">
-                        <span class="v mono">Belgrade</span>
+                        <span class="v mono"><span data-lang-inline="en">Belgrade</span><span data-lang-inline="sr">Beograd</span></span>
                         <span class="k">
-                            <span data-lang-inline="en" class="active">Serbia · Worldwide</span>
+                            <span data-lang-inline="en">Serbia · Worldwide</span>
                             <span data-lang-inline="sr">Srbija · Globalno</span>
                         </span>
                     </div>
                     <div class="stat">
                         <span class="v mono">iOS · Android · Web</span>
                         <span class="k">
-                            <span data-lang-inline="en" class="active">Platforms</span>
+                            <span data-lang-inline="en">Platforms</span>
                             <span data-lang-inline="sr">Platforme</span>
                         </span>
                     </div>
@@ -104,12 +105,12 @@
             <div class="wrap">
                 <div class="section-head reveal">
                     <span class="idx mono">01</span>
-                    <h2 data-lang="en" class="active">About</h2>
+                    <h2 data-lang="en">About</h2>
                     <h2 data-lang="sr">O nama</h2>
                 </div>
 
                 <div class="about-grid">
-                    <div data-lang="en" class="active">
+                    <div data-lang="en">
                         <p class="about-lead reveal d1">
                             We are a software development studio based in Belgrade, Serbia, with
                             <strong>over 12 years of experience</strong> delivering commercial
@@ -126,7 +127,7 @@
                         </p>
                     </div>
 
-                    <div data-lang="en" class="active">
+                    <div data-lang="en">
                         <p class="about-body reveal d2">
                             Our team combines full-stack development, native mobile applications
                             and game development to deliver comprehensive solutions for clients
@@ -151,12 +152,12 @@
             <div class="wrap">
                 <div class="section-head reveal">
                     <span class="idx mono">02</span>
-                    <h2 data-lang="en" class="active">Services</h2>
+                    <h2 data-lang="en">Services</h2>
                     <h2 data-lang="sr">Usluge</h2>
                 </div>
 
                 <!-- EN -->
-                <div class="services-grid" data-lang="en" class="active">
+                <div class="services-grid" data-lang="en">
                     <article class="svc reveal d1"><span class="num mono">S—01</span><h3>Native iOS &amp; Android application development</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
                     <article class="svc reveal d1"><span class="num mono">S—02</span><h3>Full-stack web development with .NET &amp; React</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
                     <article class="svc reveal d2"><span class="num mono">S—03</span><h3>Game development &amp; interactive experiences</h3><svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"></path></svg></article>
@@ -176,7 +177,7 @@
 
                 <div class="stack-block reveal">
                     <div class="stack-label mono">
-                        <span data-lang-inline="en" class="active">Stack &amp; Tooling</span>
+                        <span data-lang-inline="en">Stack &amp; Tooling</span>
                         <span data-lang-inline="sr">Tehnologije</span>
                     </div>
                     <div class="stack mono">
@@ -205,17 +206,17 @@
             <div class="wrap">
                 <div class="section-head reveal">
                     <span class="idx mono">03</span>
-                    <h2 data-lang="en" class="active">Contact</h2>
+                    <h2 data-lang="en">Contact</h2>
                     <h2 data-lang="sr">Kontakt</h2>
                 </div>
 
                 <div class="contact-grid">
                     <div class="contact-cta reveal d1">
                         <span class="label mono">
-                            <span data-lang-inline="en" class="active">Start a project</span>
+                            <span data-lang-inline="en">Start a project</span>
                             <span data-lang-inline="sr">Započnite projekat</span>
                         </span>
-                        <h3 data-lang="en" class="active">Have something to build?<br>Let's talk.</h3>
+                        <h3 data-lang="en">Have something to build?<br>Let's talk.</h3>
                         <h3 data-lang="sr">Imate ideju za razvoj?<br>Javite se.</h3>
 
                         <button class="email-btn mono" id="email-btn" onclick="copyEmail()">
@@ -224,7 +225,7 @@
                             <svg class="check-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
                         </button>
                         <span class="copy-hint mono" id="copy-hint">
-                            <span data-lang-inline="en" class="active">Click to copy · or open in your mail app</span>
+                            <span data-lang-inline="en">Click to copy · or open in your mail app</span>
                             <span data-lang-inline="sr">Kliknite da kopirate · ili otvorite u mejlu</span>
                         </span>
                     </div>
@@ -232,11 +233,11 @@
                     <div class="contact-meta reveal d2">
                         <div class="meta-row">
                             <span class="k mono">
-                                <span data-lang-inline="en" class="active">Location</span>
+                                <span data-lang-inline="en">Location</span>
                                 <span data-lang-inline="sr">Lokacija</span>
                             </span>
                             <span class="val">
-                                <span data-lang-inline="en" class="active">Belgrade, Serbia</span>
+                                <span data-lang-inline="en">Belgrade, Serbia</span>
                                 <span data-lang-inline="sr">Beograd, Srbija</span>
                             </span>
                         </div>
@@ -258,17 +259,17 @@
             <div class="wrap">
                 <div class="section-head reveal">
                     <span class="idx mono">04</span>
-                    <h2 data-lang="en" class="active">Developer Platforms</h2>
+                    <h2 data-lang="en">Developer Platforms</h2>
                     <h2 data-lang="sr">Platforme za razvoj</h2>
                 </div>
 
                 <div class="platforms-card reveal d1">
                     <div class="ptext">
                         <span class="soon mono"><span class="dot"></span>
-                            <span data-lang-inline="en" class="active">Coming soon</span>
+                            <span data-lang-inline="en">Coming soon</span>
                             <span data-lang-inline="sr">Uskoro</span>
                         </span>
-                        <p data-lang="en" class="active">Applications are on the way. They'll land on the App Store and Google Play soon.</p>
+                        <p data-lang="en">Applications are on the way. They'll land on the App Store and Google Play soon.</p>
                         <p data-lang="sr">Aplikacije su na putu. Uskoro stižu na App Store i Google Play.</p>
                     </div>
                     <div class="developer-badges">
@@ -293,7 +294,7 @@
                     <span class="mark" data-logo></span>
                     <span class="name">Aleksei Tkachev pr Beograd
                         <span class="mono">
-                            <span data-lang-inline="en" class="active">Software Development Studio · Belgrade</span>
+                            <span data-lang-inline="en">Software Development Studio · Belgrade</span>
                             <span data-lang-inline="sr">Razvojna softverska studija · Beograd</span>
                         </span>
                     </span>
@@ -301,7 +302,7 @@
             </div>
 
             <!-- EN legal -->
-            <div class="legal-grid" data-lang="en" class="active">
+            <div class="legal-grid" data-lang="en">
                 <div class="legal-cell"><span class="k mono">D-U-N-S®</span><span class="v mono">369917937</span></div>
                 <div class="legal-cell"><span class="k mono">Registration No.</span><span class="v mono">68512867</span></div>
                 <div class="legal-cell"><span class="k mono">Tax ID (PIB)</span><span class="v mono">115631550</span></div>
@@ -321,13 +322,13 @@
 
             <div class="footer-bottom">
                 <span class="copyright mono">© 2026 Aleksei Tkachev pr Beograd.
-                    <span data-lang-inline="en" class="active">All rights reserved.</span>
+                    <span data-lang-inline="en">All rights reserved.</span>
                     <span data-lang-inline="sr">Sva prava zadržana.</span>
                 </span>
                 <span class="footer-link">
                     <a href="privacy.html">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <span data-lang-inline="en" class="active">Privacy Policy</span>
+                        <span data-lang-inline="en">Privacy Policy</span>
                         <span data-lang-inline="sr">Politika privatnosti</span>
                     </a>
                 </span>
@@ -335,6 +336,6 @@
         </div>
     </footer>
 
-    <script src="script-9k2m4p.js"></script>
+    <script src="script-b7e2d5.js"></script>
 </body>
 </html>
